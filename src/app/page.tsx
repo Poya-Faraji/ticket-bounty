@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 
-import { Button } from "@/components/ui/button";
-
 export default function Home(): ReactNode {
   return (
     <main>
-      This is home
-      <Button>Hello</Button>
+      <div className="mt-8 w-[min(1200px,calc(100%-1rem))] mx-auto">
+        <h1 className="font-heading text-2xl font-bold">Home</h1>
+        <p className="text-muted-foreground">Your home to start.</p>
+      </div>
     </main>
   );
 }
