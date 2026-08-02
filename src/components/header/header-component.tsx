@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function HeaderComponent(): ReactNode {
   return (
-    <header className="px-5 py-4 shadow-sm">
-      <nav>
+    <header className="px-5 py-4 shadow-sm border-b border-border bg-background">
+      <nav className="w-[min(1200px,calc(100%-1rem))] mx-auto">
         <ul className="flex justify-between">
           <li className="font-bold hover:text-primary">
             <Link href="/">Home</Link>
