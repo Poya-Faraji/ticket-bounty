@@ -15,16 +15,16 @@ import {
 
 export default function Page(): ReactNode {
   return (
-    <div className="mt-8 w-[min(1200px,calc(100%-1rem))] mx-auto">
+    <div className="mt-8 w-[min(1200px,calc(100%-2rem))] mx-auto">
       <div>
         <h2 className="font-heading text-2xl font-bold">Tickets</h2>
         <p className="text-muted-foreground">All your tickets at one place.</p>
       </div>
 
-      <div className="mt-8 mx-auto max-w-80 grid grid-cols-1">
+      <div className="mt-8 mx-auto max-w-80 grid grid-cols-1 gap-5">
         {ticketData.map((ticket) => {
           return (
-            <Card className="mb-4" key={ticket.id}>
+            <Card key={ticket.id}>
               <CardHeader>
                 <CardTitle className="text-lg ">{ticket.title}</CardTitle>
                 <CardDescription
