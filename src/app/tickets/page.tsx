@@ -2,6 +2,9 @@ import type { ReactNode } from "react";
 
 import Link from "next/link";
 
+import MingcuteCheckFill from "@/icons/MingcuteCheckFill";
+import MingcuteFileLine from "@/icons/MingcuteFileLine";
+import MingcutePencilLine from "@/icons/MingcutePencilLine";
 import { ticketData } from "@/mock/tickcts-mock";
 import clsx from "clsx";
 
@@ -26,7 +29,18 @@ export default function Page(): ReactNode {
           return (
             <Card key={ticket.id}>
               <CardHeader>
-                <CardTitle className="text-lg ">{ticket.title}</CardTitle>
+                <CardTitle className="text-lg flex justify-start items-center gap-4">
+                  {ticket.icon === "DONE" && (
+                    <MingcuteCheckFill className="text-2xl" />
+                  )}
+                  {ticket.icon === "OPEN" && (
+                    <MingcutePencilLine className="text-2xl" />
+                  )}
+                  {ticket.icon === "IN_PROGRESS" && (
+                    <MingcuteFileLine className="text-2xl" />
+                  )}
+                  {ticket.title}
+                </CardTitle>
                 <CardDescription
                   className={clsx(ticket.done && "line-through", "truncate")}
                 >
