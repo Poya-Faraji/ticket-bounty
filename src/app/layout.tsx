@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
 
+import HeaderComponent from "@/components/header/header-component";
+
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -45,7 +47,10 @@ export default function RootLayout({
         robotoHeading.variable,
       )}
     >
-      <body>{children}</body>
+      <body>
+        <HeaderComponent />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
