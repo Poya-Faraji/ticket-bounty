@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 import { homePath, ticketsPath } from "@/utils/dynamic-path";
+import { LucideKanban } from "lucide-react";
 
 import { buttonVariants } from "../ui/button";
 
@@ -16,12 +17,13 @@ export default function HeaderComponent(): ReactNode {
               className={buttonVariants({ variant: "ghost" })}
               href={homePath()}
             >
-              Home
+              <LucideKanban />
+              <span className="text-lg font-semibold">TicketBounty</span>
             </Link>
           </li>
           <li>
             <Link
-              className={buttonVariants({ variant: "ghost" })}
+              className={buttonVariants({ variant: "outline" })}
               href={ticketsPath()}
             >
               Tickets
