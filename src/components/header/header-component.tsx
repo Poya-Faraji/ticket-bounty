@@ -8,7 +8,7 @@ import { buttonVariants } from "../ui/button";
 
 export default function HeaderComponent(): ReactNode {
   return (
-    <header className="px-5 py-4 shadow-sm border-b border-border bg-background">
+    <header className="px-5 py-4 border-b border-border bg-background">
       <nav className="w-[min(1200px,calc(100%-2rem))] mx-auto">
         <ul className="flex justify-between">
           <li>

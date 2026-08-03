@@ -23,7 +23,7 @@ const TicketIcons = {
 export default function Page(): ReactNode {
   return (
     <div className="mt-8 w-[min(1200px,calc(100%-2rem))] mx-auto">
-      <div>
+      <div className="border-b border-border bg-background pb-8">
         <h2 className="font-heading text-2xl font-bold">Tickets</h2>
         <p className="text-muted-foreground">All your tickets at one place.</p>
       </div>
