@@ -13,7 +13,7 @@ export default function HeaderComponent(): ReactNode {
         <ul className="flex justify-between">
           <li>
             <Link
-              className={buttonVariants({ variant: "outline" })}
+              className={buttonVariants({ variant: "ghost" })}
               href={homePath()}
             >
               Home
@@ -21,7 +21,7 @@ export default function HeaderComponent(): ReactNode {
           </li>
           <li>
             <Link
-              className={buttonVariants({ variant: "outline" })}
+              className={buttonVariants({ variant: "ghost" })}
               href={ticketsPath()}
             >
               Tickets
