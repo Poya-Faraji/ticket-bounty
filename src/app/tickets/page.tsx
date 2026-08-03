@@ -25,7 +25,7 @@ export default function Page(): ReactNode {
         <p className="text-muted-foreground">All your tickets at one place.</p>
       </div>
 
-      <div className="mt-8 mx-auto max-w-80 grid grid-cols-1 gap-5">
+      <div className="mt-8 animate-fade-in-from-top mx-auto max-w-80 grid grid-cols-1 gap-5">
         {ticketData.map((ticket) => {
           return (
             <Card key={ticket.id}>
