@@ -45,7 +45,6 @@ export default function RootLayout({
         "font-sans",
         inter.variable,
         robotoHeading.variable,
-        "dark",
       )}
     >
       <body>
