@@ -1,11 +1,13 @@
-"use client";
-
-import { useParams } from "next/navigation";
-
 import { ticketData } from "@/mock/tickcts-mock";
 
-export default function Page() {
-  const { ticketId } = useParams<{ ticketId: string }>();
+type Props = {
+  params: Promise<{
+    ticketId: string;
+  }>;
+};
+
+export default async function Page({ params }: Props) {
+  const { ticketId } = await params;
 
   const ticket = ticketData.find((ticket) => ticket.path === ticketId);
 
@@ -13,7 +15,6 @@ export default function Page() {
     return <p>Failed to find the ticket with id: {ticketId}</p>;
   }
 
-  console.log(ticket);
   return (
     <div>
       <div>{ticket?.title}</div>
