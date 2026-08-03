@@ -6,6 +6,7 @@ import MingcuteCheckFill from "@/icons/MingcuteCheckFill";
 import MingcuteFileLine from "@/icons/MingcuteFileLine";
 import MingcutePencilLine from "@/icons/MingcutePencilLine";
 import { ticketData } from "@/mock/tickcts-mock";
+import { ticketPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
 
 import {
@@ -48,10 +49,7 @@ export default function Page(): ReactNode {
                 </CardDescription>
               </CardHeader>
               <CardContent className="underline ">
-                <Link
-                  className="hover:text-primary"
-                  href={`/tickets/${ticket.path}`}
-                >
+                <Link className="hover:text-primary" href={ticketPath(ticket)}>
                   View
                 </Link>
               </CardContent>
