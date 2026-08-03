@@ -1,4 +1,4 @@
-import { TicketType } from "@/mock/tickcts-mock";
+import { TicketType } from "@/types/ticket-types";
 
 export const homePath = (): string => {
   return "/";
