@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import TicketItemComponent from "@/components/ticket/components/ticket-item/ticket-item-components";
+import { SpinnerCustom } from "@/components/ui/spinner";
 
 import { getTicket } from "@/services/ticket/ticket-service";
 import { TicketType } from "@/types/ticket-types";
@@ -25,7 +26,9 @@ export default function TicketsComponent() {
   return (
     <>
       {loading ? (
-        <p className="text-center">Loading ...</p>
+        <span className="flex justify-center items-center gap-x-4">
+          Loading <SpinnerCustom />
+        </span>
       ) : (
         tickets.map((ticket) => {
           return <TicketItemComponent key={ticket.id} ticket={ticket} />;
