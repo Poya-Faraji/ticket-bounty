@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Roboto } from "next/font/google";
 
 import HeaderComponent from "@/components/header/header-component";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 import { cn } from "@/lib/utils";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      suppressHydrationWarning
       lang="en"
       className={cn(
         "h-full",
@@ -48,8 +50,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <HeaderComponent />
-        <main>{children}</main>
+        <ThemeProvider>
+          <HeaderComponent />
+          <main>{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
