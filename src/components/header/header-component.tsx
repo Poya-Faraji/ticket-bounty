@@ -30,7 +30,7 @@ export default function HeaderComponent(): ReactNode {
                 <Link
                   className={clsx(
                     buttonVariants({ variant: "outline" }),
-                    "bg-primary text-primary-foreground hover:text-primary-foreground hover:bg-primary/80",
+                    "dark:bg-primary bg-primary dark:text-foreground text-background dark:hover:bg-primary/85 hover:bg-primary/85",
                   )}
                   href={ticketsPath()}
                 >
