@@ -2,11 +2,12 @@ import Link from "next/link";
 
 import { ticketPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
+import { LucideSquareArrowOutUpRight } from "lucide-react";
 
 import { TICKET_ICONS } from "@/components/ticket/utils/ticket-constants";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -19,24 +20,34 @@ type Props = {
 };
 
 export default function TicketItemComponent({ ticket }: Props) {
+  const actionBtn = (
+    <Link
+      className={clsx(
+        buttonVariants({ variant: "outline", size: "icon-sm" }),
+        "underline hover:text-primary",
+      )}
+      href={ticketPath(ticket)}
+    >
+      <LucideSquareArrowOutUpRight className="h-4 w-4" />
+    </Link>
+  );
+
   return (
-    <Card key={ticket.id}>
-      <CardHeader>
-        <CardTitle className="flex justify-start items-center gap-2">
-          <span className="text-sm">{TICKET_ICONS[ticket.icon]}</span>
-          <span className="text-lg">{ticket.title}</span>
-        </CardTitle>
-        <CardDescription
-          className={clsx(ticket.done && "line-through", "truncate")}
-        >
-          {ticket.desc}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="underline ">
-        <Link className="hover:text-primary" href={ticketPath(ticket)}>
-          View
-        </Link>
-      </CardContent>
-    </Card>
+    <div className="w-full max-w-105 flex gap-x-1">
+      <Card key={ticket.id} className="w-full">
+        <CardHeader>
+          <CardTitle className="flex justify-start items-center gap-2">
+            <span className="text-sm">{TICKET_ICONS[ticket.icon]}</span>
+            <span className="text-lg">{ticket.title}</span>
+          </CardTitle>
+          <CardDescription
+            className={clsx(ticket.done && "line-through", "truncate")}
+          >
+            {ticket.desc}
+          </CardDescription>
+        </CardHeader>
+      </Card>
+      <div className="flex flex-col gap-y-1">{actionBtn}</div>
+    </div>
   );
 }
