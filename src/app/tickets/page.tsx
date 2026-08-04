@@ -7,6 +7,7 @@ import { ticketPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
 import { LucideCircleCheck, LucideFileText, LucidePencil } from "lucide-react";
 
+import HeadingComponent from "@/components/heading/heading-component";
 import {
   Card,
   CardContent,
@@ -14,7 +15,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 
 const TicketIcons = {
   OPEN: <LucideFileText />,
@@ -23,13 +23,8 @@ const TicketIcons = {
 };
 export default function Page(): ReactNode {
   return (
-    <div className="mt-8 w-[min(1200px,calc(100%-2rem))] mx-auto">
-      <div className="pb-8">
-        <h2 className="font-heading text-2xl font-bold">Tickets</h2>
-        <p className="text-muted-foreground">All your tickets at one place.</p>
-      </div>
-
-      <Separator className="mx-auto w-[90%]" />
+    <>
+      <HeadingComponent title="Tickets" description="All your tickets at one place."/>
 
       <div className="mt-8 animate-fade-in-from-top mx-auto max-w-80 grid grid-cols-1 gap-5">
         {ticketData.map((ticket) => {
@@ -55,6 +50,6 @@ export default function Page(): ReactNode {
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
