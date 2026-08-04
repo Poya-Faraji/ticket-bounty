@@ -6,7 +6,7 @@ import { homePath, ticketsPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
 import { LucideKanban } from "lucide-react";
 
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function HeaderComponent(): ReactNode {
   return (
