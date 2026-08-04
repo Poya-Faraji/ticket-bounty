@@ -10,7 +10,7 @@ export default function Page(): ReactNode {
         title="Tickets"
         description="All your tickets at one place."
       />
-      <div className="mt-8 animate-fade-in-from-top mx-auto max-w-80 grid grid-cols-1 gap-5">
+      <div className="mt-8 mx-auto max-w-80 grid grid-cols-1 gap-5">
         <TicketsComponent />
       </div>
     </>

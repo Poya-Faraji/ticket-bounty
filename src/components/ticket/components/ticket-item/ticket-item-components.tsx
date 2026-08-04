@@ -37,7 +37,7 @@ export default function TicketItemComponent({
   );
 
   return (
-    <div className="w-full max-w-105 flex gap-x-1">
+    <div className="w-full max-w-105 flex gap-x-1 animate-fade-in-from-top">
       <Card key={ticket.id} className="w-full">
         <CardHeader>
           <CardTitle className="flex justify-start items-center gap-2">
