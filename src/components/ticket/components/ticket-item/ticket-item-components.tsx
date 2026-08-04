@@ -17,9 +17,13 @@ import { TicketType } from "@/types/ticket-types";
 
 type Props = {
   ticket: TicketType;
+  showDetail?: boolean;
 };
 
-export default function TicketItemComponent({ ticket }: Props) {
+export default function TicketItemComponent({
+  ticket,
+  showDetail = true,
+}: Props) {
   const actionBtn = (
     <Link
       className={clsx(
@@ -41,13 +45,23 @@ export default function TicketItemComponent({ ticket }: Props) {
             <span className="text-lg">{ticket.title}</span>
           </CardTitle>
           <CardDescription
-            className={clsx(ticket.done && "line-through", "truncate")}
+            className={clsx(
+              ticket.done && "line-through",
+              showDetail && "truncate",
+            )}
           >
-            {ticket.desc}
+            <span
+              className={clsx(
+                showDetail && "line-clamp-3 whitespace-break-spaces",
+              )}
+            >
+              {ticket.desc}
+            </span>
           </CardDescription>
         </CardHeader>
       </Card>
-      <div className="flex flex-col gap-y-1">{actionBtn}</div>
+
+      {showDetail && <div className="flex flex-col gap-y-1">{actionBtn}</div>}
     </div>
   );
 }

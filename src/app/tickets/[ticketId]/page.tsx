@@ -4,6 +4,7 @@ import { ticketData } from "@/mock/tickcts-mock";
 import { ticketsPath } from "@/utils/dynamic-path";
 
 import PlaceholderComponent from "@/components/placeholder/placholder-component";
+import TicketItemComponent from "@/components/ticket/components/ticket-item/ticket-item-components";
 import { buttonVariants } from "@/components/ui/button";
 
 type Props = {
@@ -34,9 +35,8 @@ export default async function Page({ params }: Props) {
   }
 
   return (
-    <div>
-      <div>{ticket?.title}</div>
-      <div>{ticket?.desc}</div>
+    <div className="w-[min(1200px,calc(100%-2rem))] mx-auto mt-8 flex justify-center animate-fade-in-from-top">
+      <TicketItemComponent ticket={ticket} showDetail={false} />
     </div>
   );
 }
