@@ -5,7 +5,7 @@ export const homePath = (): string => {
 };
 
 export const ticketsPath = (): string => {
-  return "tickets";
+  return "/tickets";
 };
 
 export const ticketPath = (ticket: TicketType): string => {
