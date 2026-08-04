@@ -49,7 +49,7 @@ export default function RootLayout({
         robotoHeading.variable,
       )}
     >
-      <body>
+      <body className="dark:bg-neutral-900 bg-neutral-100">
         <ThemeProvider>
           <HeaderComponent />
           <main>{children}</main>
