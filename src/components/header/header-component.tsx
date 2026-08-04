@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 
 import { homePath, ticketsPath } from "@/utils/dynamic-path";
+import clsx from "clsx";
 import { LucideKanban } from "lucide-react";
 
 import { buttonVariants } from "../ui/button";
@@ -23,7 +24,10 @@ export default function HeaderComponent(): ReactNode {
           </li>
           <li>
             <Link
-              className={buttonVariants({ variant: "outline" })}
+              className={clsx(
+                buttonVariants({ variant: "outline" }),
+                "bg-primary text-primary-foreground hover:text-primary-foreground hover:bg-primary/80",
+              )}
               href={ticketsPath()}
             >
               Tickets
