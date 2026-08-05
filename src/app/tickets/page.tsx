@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 
 import HeadingComponent from "@/components/heading/heading-component";
-import TicketsComponent from "@/components/ticket/components/tickets/tickets-component";
+import TicketsListComponent from "@/components/ticket/components/tickets-list/tickets-list-component";
 
 export default function Page(): ReactNode {
   return (
@@ -11,7 +11,7 @@ export default function Page(): ReactNode {
         description="All your tickets at one place."
       />
       <div className="mt-8 mx-auto max-w-80 grid grid-cols-1 gap-5">
-        <TicketsComponent />
+        <TicketsListComponent />
       </div>
     </>
   );

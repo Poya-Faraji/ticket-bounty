@@ -1,11 +1,12 @@
 import Link from "next/link";
 
-import { ticketData } from "@/mock/tickcts-mock";
 import { ticketsPath } from "@/utils/dynamic-path";
 
 import PlaceholderComponent from "@/components/placeholder/placholder-component";
 import TicketItemComponent from "@/components/ticket/components/ticket-item/ticket-item-components";
 import { buttonVariants } from "@/components/ui/button";
+
+import { getTicket } from "@/services/ticket/ticket-service";
 
 type Props = {
   params: Promise<{
@@ -16,9 +17,9 @@ type Props = {
 export default async function Page({ params }: Props) {
   const { ticketId } = await params;
 
-  const ticket = ticketData.find((ticket) => ticket.path === ticketId);
+  const ticket = await getTicket(ticketId);
 
-  if (ticket === undefined) {
+  if (ticket === null) {
     return (
       <PlaceholderComponent
         title={`No ticket found !`}
