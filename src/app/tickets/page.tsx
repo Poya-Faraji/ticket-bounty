@@ -1,11 +1,15 @@
 import { type ReactNode, Suspense } from "react";
 
+import { ErrorBoundary } from "react-error-boundary";
+
 import HeadingComponent from "@/components/heading/heading-component";
+import PlaceholderComponent from "@/components/placeholder/placholder-component";
 import TicketsListComponent from "@/components/ticket/components/tickets-list/tickets-list-component";
 import { SpinnerCustom } from "@/components/ui/spinner";
 
 export default function Page(): ReactNode {
-  const fallBackUI = <SpinnerCustom>Loading...</SpinnerCustom>;
+  const suspenseFallback = <SpinnerCustom>Loading...</SpinnerCustom>;
+  const errorFallback = <PlaceholderComponent title="Error getting tickets" />;
 
   return (
     <>
@@ -15,9 +19,11 @@ export default function Page(): ReactNode {
       />
 
       <div className="mt-8 mx-auto max-w-80 grid grid-cols-1 gap-5">
-        <Suspense fallback={fallBackUI}>
-          <TicketsListComponent />
-        </Suspense>
+        <ErrorBoundary fallback={errorFallback}>
+          <Suspense fallback={suspenseFallback}>
+            <TicketsListComponent />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { ticketsPath } from "@/utils/dynamic-path";
+import { ErrorBoundary } from "react-error-boundary";
 
 import PlaceholderComponent from "@/components/placeholder/placholder-component";
 import TicketItemComponent from "@/components/ticket/components/ticket-item/ticket-item-components";
