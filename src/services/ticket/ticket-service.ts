@@ -12,7 +12,7 @@ export const getTickets = async (): Promise<TicketType[]> => {
 export const getTicket = async (
   ticketId: string,
 ): Promise<TicketType | null> => {
-  const ticket = await prisma.ticket.findFirst({
+  const ticket = await prisma.ticket.findUnique({
     where: {
       id: ticketId,
     },
