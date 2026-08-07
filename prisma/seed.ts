@@ -11,14 +11,19 @@ const prisma = new PrismaClient({
   adapter,
 });
 
-async function main() {
+async function seed() {
+  const t0 = performance.now();
+  console.log("Database seeding started...");
+  await prisma.ticket.deleteMany({});
+
   await prisma.ticket.createMany({
     data: ticketData,
   });
 
-  console.log("Tickets seeded successfully");
+  const t1 = performance.now();
+  console.log(`Tickets seeded successfully in ${t1 - t0}ms`);
 }
 
-main()
+seed()
   .catch(console.error)
   .finally(() => prisma.$disconnect());
