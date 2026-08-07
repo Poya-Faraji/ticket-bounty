@@ -1,8 +1,7 @@
 import { TicketType } from "@/types/ticket-types";
 
-export const ticketData: TicketType[] = [
+export const ticketData: Omit<TicketType, "id">[] = [
   {
-    id: "44e9d5cc-8f70-4e9a-97b9-afb3c011dd2c",
     title: "Implement user authentication",
     desc: "Add login and registration flow using Supabase authentication.",
     done: true,
@@ -10,7 +9,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "0243ad55-389d-4a55-b858-a9d2305bb9db",
     title: "Create dashboard layout",
     desc: "Build the main dashboard structure with sidebar navigation and responsive design.",
     done: false,
@@ -18,7 +16,6 @@ export const ticketData: TicketType[] = [
     icon: "IN_PROGRESS",
   },
   {
-    id: "0243ad55-389f-4c55-f858-a9d2305bb9db",
     title: "Fix mobile navigation bug",
     desc: "The mobile menu closes unexpectedly after selecting an item.",
     done: false,
@@ -26,7 +23,6 @@ export const ticketData: TicketType[] = [
     icon: "OPEN",
   },
   {
-    id: "a193d7e4-4a91-4d8f-9b22-7c0b1a8e2f10",
     title: "Add ticket filtering",
     desc: "Allow users to filter tickets by status: open, in progress, and completed.",
     done: true,
@@ -34,7 +30,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "b284e8f5-5b02-4e9a-8c33-8d1c2b9f3a11",
     title: "Improve database queries",
     desc: "Optimize Prisma queries to reduce unnecessary database requests.",
     done: false,
@@ -42,7 +37,6 @@ export const ticketData: TicketType[] = [
     icon: "IN_PROGRESS",
   },
   {
-    id: "c395f9a6-6c13-4fab-9d44-9e2d3c0a4b22",
     title: "Setup project documentation",
     desc: "Write documentation explaining installation and development workflow.",
     done: true,
@@ -50,7 +44,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "d406a0b7-7d24-4abc-ae55-0f3e4d1b5c33",
     title: "Create API endpoints",
     desc: "Implement REST API endpoints for managing tickets.",
     done: false,
@@ -58,7 +51,6 @@ export const ticketData: TicketType[] = [
     icon: "IN_PROGRESS",
   },
   {
-    id: "e517b1c8-8e35-4bcd-bf66-1a4f5e2c6d44",
     title: "Add form validation",
     desc: "Use Zod schemas to validate ticket creation and update forms.",
     done: true,
@@ -66,7 +58,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "f628c2d9-9f46-4cde-c077-2b5a6f3d7e55",
     title: "Implement dark mode",
     desc: "Add dark theme support and persist user preference.",
     done: false,
@@ -74,7 +65,6 @@ export const ticketData: TicketType[] = [
     icon: "OPEN",
   },
   {
-    id: "a739d3e0-a057-4def-d188-3c6b7a4e8f66",
     title: "Fix TypeScript errors",
     desc: "Resolve remaining TypeScript issues before production deployment.",
     done: true,
@@ -82,7 +72,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "b840e4f1-b168-4efa-e299-4d7c8b5f9a77",
     title: "Setup Prisma migrations",
     desc: "Configure Prisma migrations with Supabase PostgreSQL database.",
     done: false,
@@ -90,7 +79,6 @@ export const ticketData: TicketType[] = [
     icon: "IN_PROGRESS",
   },
   {
-    id: "c951f502-c279-4fab-f300-5e8d9c6a0b88",
     title: "Add loading states",
     desc: "Create reusable loading components for async operations.",
     done: false,
@@ -98,7 +86,6 @@ export const ticketData: TicketType[] = [
     icon: "OPEN",
   },
   {
-    id: "da62a613-d38a-4abc-a411-6f9e0d7b1c99",
     title: "Deploy application",
     desc: "Deploy the application to production and configure environment variables.",
     done: true,
@@ -106,7 +93,6 @@ export const ticketData: TicketType[] = [
     icon: "DONE",
   },
   {
-    id: "eb73b724-e49b-4bcd-b522-7a0f1e8c2d10",
     title: "Improve error handling",
     desc: "Add better error messages and fallback states across the application.",
     done: false,
@@ -114,7 +100,6 @@ export const ticketData: TicketType[] = [
     icon: "IN_PROGRESS",
   },
   {
-    id: "fc84c835-f5ac-4cde-c633-8b1a2f9d3e21",
     title: "Create user profile page",
     desc: "Build profile page where users can update their personal information.",
     done: false,
