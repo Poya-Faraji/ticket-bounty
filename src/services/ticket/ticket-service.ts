@@ -1,23 +1,22 @@
-import { ticketData } from "@/mock/tickcts-mock";
-
+import { prisma } from "@/lib/prisma";
 import { TicketType } from "@/types/ticket-types";
 
 export const getTickets = async (): Promise<TicketType[]> => {
-  // artificial delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  const tickets = await prisma.ticket.findMany({});
 
   return new Promise((resolve) => {
-    resolve(ticketData);
+    resolve(tickets);
   });
 };
 
 export const getTicket = async (
   ticketId: string,
 ): Promise<TicketType | null> => {
-  // artificial delay
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
-  const ticket = ticketData.find((ticket) => ticket.path === ticketId);
+  const ticket = await prisma.ticket.findFirst({
+    where: {
+      id: ticketId,
+    },
+  });
 
   return new Promise((resolve) => {
     resolve(ticket || null);
