@@ -23,7 +23,6 @@ model Ticket {
   title String
   desc  String     @db.VarChar(1024)
   done  Boolean
-  path  String
   icon  TicketIcon
 
   createdAt DateTime @default(now())

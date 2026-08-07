@@ -9,5 +9,5 @@ export const ticketsPath = (): string => {
 };
 
 export const ticketPath = (ticket: TicketType): string => {
-  return `/tickets/${ticket.path}`;
+  return `/tickets/${ticket.id}`;
 };
