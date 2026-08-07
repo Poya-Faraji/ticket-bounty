@@ -12,18 +12,23 @@ const prisma = new PrismaClient({
 });
 
 async function seed() {
-  const t0 = performance.now();
+  const start = performance.now();
   console.log("Database seeding started...");
-  await prisma.ticket.deleteMany({});
 
+  await prisma.ticket.deleteMany();
   await prisma.ticket.createMany({
     data: ticketData,
   });
 
-  const t1 = performance.now();
-  console.log(`Tickets seeded successfully in ${t1 - t0}ms`);
+  const end = performance.now();
+  console.log(`Tickets seeded successfully in ${end - start}ms`);
 }
 
 seed()
-  .catch(console.error)
-  .finally(() => prisma.$disconnect());
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
