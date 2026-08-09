@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { Ticket } from "@/generated/prisma/client";
@@ -27,10 +25,6 @@ export default function TicketItemComponent({
   ticket,
   showDetail = true,
 }: Props) {
-  const handleDeleteTicket = async () => {
-    await deleteTicketAction(ticket.id);
-  };
-
   const actionBtn = (
     <Link
       className={clsx(
@@ -44,15 +38,16 @@ export default function TicketItemComponent({
   );
 
   const deleteButton = (
-    <Button
-      variant="outline"
-      className="cursor-pointer hover:text-destructive"
-      size="icon-sm"
-
-      onClick={handleDeleteTicket}
-    >
-      <LucideTrash className="h-4 w-4" />
-    </Button>
+    <form action={deleteTicketAction.bind(null, ticket.id)}>
+      <Button
+        variant="outline"
+        className="cursor-pointer hover:text-destructive"
+        size="icon-sm"
+        type="submit"
+      >
+        <LucideTrash className="h-4 w-4" />
+      </Button>
+    </form>
   );
 
   return (
