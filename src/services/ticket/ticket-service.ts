@@ -1,7 +1,8 @@
-import { prisma } from "@/lib/prisma";
-import { TicketType } from "@/types/ticket-types";
+import { Ticket } from "@/generated/prisma/client";
 
-export const getTickets = async (): Promise<TicketType[]> => {
+import { prisma } from "@/lib/prisma";
+
+export const getTickets = async (): Promise<Ticket[]> => {
   const tickets = await prisma.ticket.findMany({});
 
   return new Promise((resolve) => {
@@ -9,9 +10,7 @@ export const getTickets = async (): Promise<TicketType[]> => {
   });
 };
 
-export const getTicket = async (
-  ticketId: string,
-): Promise<TicketType | null> => {
+export const getTicket = async (ticketId: string): Promise<Ticket | null> => {
   const ticket = await prisma.ticket.findUnique({
     where: {
       id: ticketId,

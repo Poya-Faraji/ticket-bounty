@@ -1,6 +1,6 @@
-import { TicketType } from "@/types/ticket-types";
+import { Ticket } from "@/generated/prisma/client";
 
-type TicketMockType = Omit<TicketType, "id">[];
+type TicketMockType = Omit<Ticket, "id" | "createdAt" | "updatedAt">[];
 
 export const ticketData: TicketMockType = [
   {

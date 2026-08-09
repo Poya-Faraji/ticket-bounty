@@ -12,11 +12,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Ticket } from "@/generated/prisma/client";
 
-import { TicketType } from "@/types/ticket-types";
 
 type Props = {
-  ticket: TicketType;
+  ticket: Ticket;
   showDetail?: boolean;
 };
 
