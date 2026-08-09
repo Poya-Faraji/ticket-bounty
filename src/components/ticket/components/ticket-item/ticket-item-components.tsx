@@ -27,6 +27,7 @@ export default function TicketItemComponent({
 }: Props) {
   const actionBtn = (
     <Link
+      prefetch
       className={clsx(
         buttonVariants({ variant: "outline", size: "icon-sm" }),
         "underline hover:text-primary",

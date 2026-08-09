@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/prisma/client";
-import { ticketData } from "@/mock/tickcts-mock";
+import { ticketData } from "@/mock/tickets-mock";
 import { PrismaPg } from "@prisma/adapter-pg";
 import "dotenv/config";
 

@@ -1,4 +1,5 @@
 "use server";
+
 import { redirect } from "next/navigation";
 
 import { ticketsPath } from "@/utils/dynamic-path";
