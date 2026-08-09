@@ -1,19 +1,18 @@
 import Link from "next/link";
 
+import { Ticket } from "@/generated/prisma/client";
 import { ticketPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
-import { LucideSquareArrowOutUpRight } from "lucide-react";
+import { LucideSquareArrowOutUpRight, LucideTrash } from "lucide-react";
 
 import { TICKET_ICONS } from "@/components/ticket/utils/ticket-constants";
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Ticket } from "@/generated/prisma/client";
-
 
 type Props = {
   ticket: Ticket;
@@ -34,6 +33,16 @@ export default function TicketItemComponent({
     >
       <LucideSquareArrowOutUpRight className="h-4 w-4" />
     </Link>
+  );
+
+  const deleteButton = (
+    <Button
+      variant="outline"
+      className="cursor-pointer hover:text-destructive"
+      size="icon-sm"
+    >
+      <LucideTrash className="h-4 w-4" />
+    </Button>
   );
 
   return (
@@ -61,7 +70,16 @@ export default function TicketItemComponent({
         </CardHeader>
       </Card>
 
-      {showDetail && <div className="flex flex-col gap-y-1">{actionBtn}</div>}
+      <div className="flex flex-col gap-y-1">
+        {showDetail === true ? (
+          <>
+            {actionBtn}
+            {deleteButton}
+          </>
+        ) : (
+          <div>{deleteButton}</div>
+        )}
+      </div>
     </div>
   );
 }
