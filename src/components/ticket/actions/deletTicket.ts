@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { ticketsPath } from "@/utils/dynamic-path";
@@ -13,5 +14,6 @@ export const deleteTicketAction = async (id: string) => {
     },
   });
 
-  return redirect(ticketsPath());
+  revalidatePath(ticketsPath());
+  redirect(ticketsPath());
 };
