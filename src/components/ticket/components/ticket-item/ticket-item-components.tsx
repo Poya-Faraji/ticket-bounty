@@ -1,9 +1,13 @@
 import Link from "next/link";
 
 import { Ticket } from "@/generated/prisma/client";
-import { ticketPath } from "@/utils/dynamic-path";
+import { ticketEditPath, ticketPath } from "@/utils/dynamic-path";
 import clsx from "clsx";
-import { LucideSquareArrowOutUpRight, LucideTrash } from "lucide-react";
+import {
+  LucidePencil,
+  LucideSquareArrowOutUpRight,
+  LucideTrash,
+} from "lucide-react";
 
 import { TICKET_ICONS } from "@/components/ticket/utils/ticket-constants";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -32,12 +36,24 @@ export default function TicketItemComponent({
         buttonVariants({ variant: "outline", size: "icon-sm" }),
         "underline hover:text-primary",
       )}
-      href={ticketPath(ticket)}
+      href={ticketPath(ticket.id)}
     >
       <LucideSquareArrowOutUpRight className="h-4 w-4" />
     </Link>
   );
 
+  const editBtn = (
+    <Link
+      prefetch
+      className={clsx(
+        buttonVariants({ variant: "outline", size: "icon-sm" }),
+        "underline hover:text-primary",
+      )}
+      href={ticketEditPath(ticket.id)}
+    >
+      <LucidePencil className="h-4 w-4" />
+    </Link>
+  );
   const deleteButton = (
     <form action={deleteTicketAction.bind(null, ticket.id)}>
       <Button
@@ -80,10 +96,13 @@ export default function TicketItemComponent({
         {showDetail === true ? (
           <>
             {actionBtn}
-            {deleteButton}
+            {editBtn}
           </>
         ) : (
-          <div>{deleteButton}</div>
+          <>
+            {editBtn}
+            {deleteButton}
+          </>
         )}
       </div>
     </div>
