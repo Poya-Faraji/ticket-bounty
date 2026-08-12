@@ -1,6 +1,6 @@
 import { Ticket } from "@/generated/prisma/client";
 
-import { updateTicket } from "@/components/ticket/actions/updateTicket";
+import { updateTicket } from "@/components/ticket/actions/update-ticket";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
