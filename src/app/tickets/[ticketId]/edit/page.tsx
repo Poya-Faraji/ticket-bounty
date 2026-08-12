@@ -4,6 +4,7 @@ import { CardCompactComponent } from "@/components/card-compact/card-compact-com
 import { TicketUpdateForm } from "@/components/ticket/components/ticket-update-form/ticket-update-form";
 
 import { getTicket } from "@/services/ticket/ticket-service";
+import { TicketUpsertForm } from "@/components/ticket/components/ticket-upsert-from/ticket-upsert-from";
 
 type Props = {
   params: Promise<{
@@ -26,7 +27,7 @@ export default async function page({ params }: Props) {
         description="Edit and existing ticket"
         className="w-full max-w-105 animate-fade-in-from-top"
       >
-        <TicketUpdateForm ticket={ticket} />
+        <TicketUpsertForm ticket={ticket} />
       </CardCompactComponent>
     </div>
   );

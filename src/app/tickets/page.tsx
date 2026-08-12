@@ -5,7 +5,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { CardCompactComponent } from "@/components/card-compact/card-compact-component";
 import HeadingComponent from "@/components/heading/heading-component";
 import PlaceholderComponent from "@/components/placeholder/placholder-component";
-import { TicketCreateForm } from "@/components/ticket/components/ticket-create-form/ticket-create-form";
+import { TicketUpsertForm } from "@/components/ticket/components/ticket-upsert-from/ticket-upsert-from";
 import TicketsListComponent from "@/components/ticket/components/tickets-list/tickets-list-component";
 import { SpinnerCustom } from "@/components/ui/spinner";
 
@@ -26,7 +26,7 @@ export default function Page(): ReactNode {
           description="A new ticket will be created"
           className="w-full max-w-105 self-center"
         >
-          <TicketCreateForm />
+          <TicketUpsertForm />
         </CardCompactComponent>
       </div>
 
