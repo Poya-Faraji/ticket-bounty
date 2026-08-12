@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-import { deleteTicketAction } from "../../actions/deletTicket";
+import { deleteTicketAction } from "../../actions/deleteTicket";
 
 type Props = {
   ticket: Ticket;
